@@ -1,0 +1,22 @@
+.feedContainer{
+    /* border: 1px solid blueviolet; */
+    height: 100%;
+}
+.feedMain{
+    /* border: 1px solid red; */
+    padding: 5px;
+    /* border-right: 1px dashed grey; */
+}
+.feedSidebar{
+    padding: 5px;
+    /* border: 1px solid green; */
+}
+.sidebarCard{
+    height: 100%;
+    /* border: 1px solid grey; */
+    position: sticky;
+    top: 0;
+}
+.blogCard{
+    margin-top: 10px;
+}

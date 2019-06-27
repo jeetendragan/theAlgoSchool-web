@@ -1,0 +1,48 @@
+<div style="padding: 10px; height: 100%;">
+
+  <div class="container feedContainer" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap.xs="0" borderedDiv>
+    <div class="item item-4 feedMain" fxFlex="80%" fxFlexOffset.xs="0">
+      <mat-card *ngFor = "let blogCardData of blogCards" class="blogCard">
+        <!-- <mat-card-title>
+          {{blogCardData.header}} asd
+        </mat-card-title> -->
+        <mat-card-content>
+          <div fxLayout="column">
+            <div fxLayout="row" fxLayoutGap = "20px" fxLayout.lt-sm="column">
+              <div style="font-weight: 800">{{blogCardData.header}}</div>
+              <div style="color: gray;">{{blogCardData.caption}}</div>
+            </div>
+            <div style="margin: 10px;"> 
+              {{blogCardData.summary}}
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Read...</button>
+          <button mat-icon-button>
+            <mat-icon>share</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>forward</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>enter</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>open</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="item item-5 feedSidebar" fxFlex>
+      <mat-card class="sidebarCard">
+        <mat-card-content>
+          This is the summary of the blog. Ipsom kibarubaihsioand. adihaidhashdiahsda d,
+          <a href="dadhadadd"></a>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

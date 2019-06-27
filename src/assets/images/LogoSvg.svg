@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #dfeceb } 
+		.shp1 { fill: #b4d4d0 } 
+		.txt2 { font-size: 67px;fill: #1a1a1a;font-family: "Oregano";font-weight: 400;text-anchor: middle } 
+		.shp3 { fill: #ff0000 } 
+		.shp4 { fill: #808080 } 
+	</style>
+	<path id="Background" class="shp0" d="M0 0L800 0L800 800L0 800L0 0Z" />
+	<path id="Border" fill-rule="evenodd" class="shp1" d="M0 0L800 0L800 800L0 800L0 0ZM25 25L25 775L775 775L775 25L25 25Z" />
+	<text id="The AlgoSchool " style="transform: matrix(1,0,0,1,241,392)" >
+		<tspan x="0" y="0" class="txt2">The AlgoSchool</tspan>
+	</text>
+	<text id=" " style="transform: matrix(1,0,0,1,-158,368)" >
+	</text>
+	<text id=" " style="transform: matrix(1,0,0,1,-103,21)" >
+	</text>
+	<path id="Shape 1" class="shp3" d="M523 335C509.73 335 499 324.05 499 310.5C499 296.95 509.73 286 523 286C536.27 286 547 296.95 547 310.5C547 324.05 536.27 335 523 335Z" />
+	<path id="Shape 2" class="shp3" d="M482.5 465C470.61 465 461 455.39 461 443.5C461 431.61 470.61 422 482.5 422C494.39 422 504 431.61 504 443.5C504 455.39 494.39 465 482.5 465Z" />
+	<path id="Shape 3" class="shp3" d="M647.61 578.66C619.96 578.66 597.61 556.31 597.61 528.66C597.61 501.01 619.96 478.66 647.61 478.66C675.26 478.66 697.61 501.01 697.61 528.66C697.61 556.31 675.26 578.66 647.61 578.66Z" />
+	<path id="Shape 4" class="shp3" d="M700 342C687.28 342 677 331.72 677 319C677 306.28 687.28 296 700 296C712.72 296 723 306.28 723 319C723 331.72 712.72 342 700 342Z" />
+	<path id="Shape 5" class="shp4" d="M492.03 423.8L487.19 422.53L511.19 331.03L516.03 332.3L492.03 423.8ZM497.48 458.89L499.74 454.43L603.24 506.93L600.98 511.39L497.48 458.89Z" />
+	<path id="Shape 7" class="shp4" d="M660.04 480.74L655.18 479.59L688.18 340.09L693.04 341.24L660.04 480.74Z" />
+	<path id="Shape 8" class="shp4" d="M546.97 310.66L547.25 305.67L677.75 313.17L677.47 318.16L546.97 310.66Z" />
+</svg>
