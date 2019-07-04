@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class BlogAiSearchComponent implements OnInit {
 
   constructor() { }
-
+  showSimulator : boolean;
   ngOnInit() {
+    this.showSimulator = true;
+  }
+
+  toggleSimulator(){
+    this.showSimulator = !this.showSimulator;
   }
 
 }

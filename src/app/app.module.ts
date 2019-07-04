@@ -11,6 +11,7 @@ import { BlogComponent } from './blog/blog.component';
 import { FeedComponent } from './feed/feed.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BlogAiSearchComponent } from './blog-ai-search/blog-ai-search.component';
+import { AiSearchSimulatorComponent } from './blog-ai-search/ai-search-simulator/ai-search-simulator.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BlogAiSearchComponent } from './blog-ai-search/blog-ai-search.component
     BlogComponent,
     FeedComponent,
     PageNotFoundComponent,
-    BlogAiSearchComponent
+    BlogAiSearchComponent,
+    AiSearchSimulatorComponent
   ],
   imports: [
     BrowserModule,
