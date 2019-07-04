@@ -1,3 +1,46 @@
-<p>
-  blog works!
-</p>
+<!-- <div fxLayout="row"> -->
+  <div class="homeDiv" fxLayout="column">
+    <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;" 
+      (click)="navigateToHome()">
+      <mat-icon>home</mat-icon>
+    </button>
+    <!-- <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;">
+        <mat-icon>thumb_up</mat-icon>
+    </button>
+    <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;">
+        <mat-icon>share</mat-icon>
+    </button> -->
+  </div>
+  <div class="blogHolder">
+    <mat-card class="blogCard">
+      <mat-card-content>
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutGap="20px" fxLayout.lt-sm="column">
+            <div style="font-weight: 800">{{blog.header}}</div>
+            <div style="color: gray;">{{blog.caption}}</div>
+          </div>
+          <div style="margin: 10px;">
+            <blog-ai-search ng-if="blog.id==''"></blog-ai-search>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-icon-button>
+          <mat-icon style="color:grey;">share</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon style="color: grey;">thumb_up</mat-icon>
+        </button> -->
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- <div class="relatedBlogs">
+    <mat-card class="blogCard">
+      <mat-card-content>
+          This will show related posts
+      </mat-card-content>
+    </mat-card>
+  </div> -->
+
+<!-- </div> -->

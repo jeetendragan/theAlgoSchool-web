@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 5px;
 }  
 /* Track */
 ::-webkit-scrollbar-track {
@@ -14,12 +14,28 @@
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: firebrick; 
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+/* Styles for tab labels */
+.mat-tab-label {
+    min-width: 25px !important;
+    height: 37px !important; 
+    min-height: 50;
+}   
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+}
 .mat-tab-label{
-    height: 20px;
+    font-size: 12px !important;
+}
+.blogCard{
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right:150px;
+    /* background-color: #FFF5EE; */
 }

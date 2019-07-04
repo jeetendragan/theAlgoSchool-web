@@ -9,13 +9,17 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from "./material/material.module";
 import { BlogComponent } from './blog/blog.component';
 import { FeedComponent } from './feed/feed.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BlogAiSearchComponent } from './blog-ai-search/blog-ai-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BlogComponent,
-    FeedComponent
+    FeedComponent,
+    PageNotFoundComponent,
+    BlogAiSearchComponent
   ],
   imports: [
     BrowserModule,

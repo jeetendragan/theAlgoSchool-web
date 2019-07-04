@@ -1,10 +1,11 @@
 .feedContainer{
-    /* border: 1px solid blueviolet; */
     height: 100%;
 }
 .feedMain{
     /* border: 1px solid red; */
     padding: 5px;
+    width: 100%;
+    /* margin-bottom: 50px; */
     /* border-right: 1px dashed grey; */
 }
 .feedSidebar{
@@ -18,5 +19,12 @@
     top: 0;
 }
 .blogCard{
-    margin-top: 10px;
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right:80px;
+    /* background-color: #FFF5EE; */
+}
+a{
+    text-decoration: none;
+    color: grey;
 }

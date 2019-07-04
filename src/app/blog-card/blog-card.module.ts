@@ -9,12 +9,12 @@ import { CommonModule } from '@angular/common';
 })
 
 export class BlogCardModule { 
-  id: Number;
+  id: String;
   header: String;
   caption: String;
   summary: String;
 
-  constructor(id: Number, header: String, caption: String, summary: String){
+  constructor(id: String, header: String, caption: String, summary: String){
     this.id = id;
     this.header = header;
     this.caption = caption;

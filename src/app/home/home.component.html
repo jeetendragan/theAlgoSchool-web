@@ -1,7 +1,7 @@
 <div style="padding: 10px; height: 100%;">
 
     <mat-tab-group style="height: 100%;">
-      <mat-tab style="font-size: 0.4em; border: 4px solid red;height: 100%;" label="Feed">
+      <mat-tab label="Feed">
 
         <!-- <ng-template mat-tab-label>
           <mat-icon>view_list</mat-icon>&nbsp;&nbsp;Feed
@@ -16,8 +16,43 @@
           <mat-icon>info</mat-icon>&nbsp;&nbsp;About
         </ng-template> -->
         
-        <p>The AlgoSchool is a hobby project started by Jeetendra Gan. 
-          The goal is to create projects, describe them and have fun.</p>
+        <mat-card class="blogCard">
+            <mat-card-content>
+              <div fxLayout="column">
+                <div style="margin: 10px;"> 
+                  <h3>Hello, World from The AlgoSchool!</h3>
+                  <div>
+                    <p>Through this site, I wish to share my projects. I also create video tutorials describing the 
+                    projects. My interests are mainly in algorithms. I love combinatorial-optimization and AI search. 
+                    I will be pursuing a Masters degree in Data Science from the University Of Buffalo in Fall 2019. 
+                    Any new project ideas are welcome! </p>
+
+                    <p>
+                      The code for this site, and all my projects is on &nbsp;
+                      <button mat-button 
+                        style="background-color: grey; color: white; font-size: x-small;
+                          padding: 0 12px;">
+                          <img src="../assets/images/github-circle-white-transparent.svg">
+                          GitHub
+                      </button> &nbsp; Looking forward to your
+                      contributions.
+                    </p>
+                    
+                    <p>
+                      Also subscribe "The AlgoSchool" on &nbsp;
+                      <button mat-button 
+                          style="background-color: grey; color: white; font-size: x-small;
+                          padding: 0 12px;">
+                          <img src="../assets/images/youtube_social_circle_white.png" width="25px" height="25px">
+                          YouTube
+                      </button>
+                    </p>
+                    
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
         
       </mat-tab>
     </mat-tab-group>
