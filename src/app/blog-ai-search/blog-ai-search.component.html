@@ -27,7 +27,7 @@
       
     </mat-drawer-container> -->
     
-    <div [ngClass]="{'expandedSimulator': showSimulator == true, 'hiddenSimulator':showSimulator == false }">
+    <div cdkDrag [ngClass]="{'expandedSimulator': showSimulator == true, 'hiddenSimulator':showSimulator == false }">
         <ai-search-simulator></ai-search-simulator>
     </div>
     <div [ngClass]="{'shrinkedContent': showSimulator == true, 'expandedContent': showSimulator == false}">

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import 'fabric';
+
+declare let fabric;
 
 @Component({
   selector: 'ai-search-simulator',
