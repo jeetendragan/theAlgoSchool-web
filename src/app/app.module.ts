@@ -10,8 +10,7 @@ import { MaterialModule } from "./material/material.module";
 import { BlogComponent } from './blog/blog.component';
 import { FeedComponent } from './feed/feed.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BlogAiSearchComponent } from './blog-ai-search/blog-ai-search.component';
-import { AiSearchSimulatorComponent } from './blog-ai-search/ai-search-simulator/ai-search-simulator.component';
+import { IFrameEmbedderComponent, SafePipe } from './iframe-embedder/iframe-embedder.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,8 @@ import { AiSearchSimulatorComponent } from './blog-ai-search/ai-search-simulator
     BlogComponent,
     FeedComponent,
     PageNotFoundComponent,
-    BlogAiSearchComponent,
-    AiSearchSimulatorComponent
+    IFrameEmbedderComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

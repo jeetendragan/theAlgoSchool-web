@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogCardModule } from '../blog-card/blog-card.module';
-import { BlogCardService } from '../blog-card/blog-card.service';
+import { BlogCardModule } from '../data-fetcher/blog-card.module';
+import { BlogCardService } from '../data-fetcher/blog-card.service';
 import { Router } from "@angular/router";
 
 @Component({

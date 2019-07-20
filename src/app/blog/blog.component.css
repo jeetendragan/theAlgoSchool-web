@@ -4,7 +4,7 @@
     display: block;
     height: 100%;
     overflow: auto;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .homeDiv{
@@ -32,4 +32,45 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+}
+
+.columnItem{
+      width: 100%;
+      /* border: 1px solid rebeccapurple; */
+      margin-bottom: 10px;
+}
+
+.expandedEmbeddedProjectWindow{
+    /* border: 1px solid grey; */
+    /* box-shadow: 0px 0px 20px #888888; */
+    /* border: 1px solid firebrick; */
+    border-radius: 0.5%;
+    width: 70%;
+    height: 500px;
+    top: 60;
+    left: 30;
+    position: absolute;
+    background: white;
+    z-index: 10;
+}
+.hiddenEmbeddedProjectWindow{
+    /* border: 1px solid blueviolet; */
+    display: none;
+    visibility: collapse;
+    height: 0px;
+    width: 0px;
+}
+
+.blogContent{
+    width: 100%;
+}
+
+.embeddedProjectWindowTopBar{
+    border-radius:0.5%; 
+    width: 100%; 
+    height:100%;
+    background: #D5D8DC; 
+    color: firebrick; 
+    cursor: move;
+    /* border: 1px solid orange; */
 }

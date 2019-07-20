@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatButton, MatMenuModule, MatListModule, MatIconModule,
         MatDividerModule, MatGridListModule,
         MatCardModule, MatExpansionModule, MatTabsModule, 
-        MatToolbarModule, MatSidenavModule, MatSlideToggleModule,} from "@angular/material";
+        MatToolbarModule, MatSidenavModule, MatSlideToggleModule, MatTooltipModule,} from "@angular/material";
 
 import { DragDropModule } from "@angular/cdk/drag-drop";
 
@@ -20,7 +20,8 @@ const MaterialComponents = [
   MatToolbarModule,
   MatSidenavModule,
   MatSlideToggleModule,
-  DragDropModule
+  DragDropModule,
+  MatTooltipModule
 ];
 
 @NgModule({

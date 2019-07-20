@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AiSearchSimulatorComponent } from './ai-search-simulator.component';
+import { IFrameEmbedderComponent } from './iframe-embedder.component';
 
-describe('AiSearchSimulatorComponent', () => {
-  let component: AiSearchSimulatorComponent;
-  let fixture: ComponentFixture<AiSearchSimulatorComponent>;
+describe('IFrameEmbedderComponent', () => {
+  let component: IFrameEmbedderComponent;
+  let fixture: ComponentFixture<IFrameEmbedderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AiSearchSimulatorComponent ]
+      declarations: [ IFrameEmbedderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AiSearchSimulatorComponent);
+    fixture = TestBed.createComponent(IFrameEmbedderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,41 +1,84 @@
-<!-- <div fxLayout="row"> -->
-  <div class="homeDiv" fxLayout="column">
-    <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;" 
-      (click)="navigateToHome()">
-      <mat-icon>home</mat-icon>
-    </button>
-    <!-- <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;">
+<div class="homeDiv" fxLayout="column">
+  <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;" (click)="navigateToHome()">
+    <mat-icon>home</mat-icon>
+  </button>
+  <!-- <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;">
         <mat-icon>thumb_up</mat-icon>
     </button>
     <button mat-mini-fab style="color: white; background: gray; margin-bottom: 5px;">
         <mat-icon>share</mat-icon>
     </button> -->
-  </div>
-  <div class="blogHolder">
-    <mat-card class="blogCard">
-      <mat-card-content>
-        <div fxLayout="column">
-          <div fxLayout="row" fxLayoutGap="20px" fxLayout.lt-sm="column">
-            <div style="font-weight: 800">{{blog.header}}</div>
-            <div style="color: gray;">{{blog.caption}}</div>
-          </div>
-          <div style="margin: 10px;">
-            <blog-ai-search ng-if="blog.id==''"></blog-ai-search>
-          </div>
+</div>
+<div class="blogHolder">
+  <mat-card class="blogCard">
+    <mat-card-content>
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.lt-sm="column">
+          <div style="font-weight: 800">{{blog.header}}</div>
+          <div style="color: gray;">{{blog.caption}}</div>
         </div>
-      </mat-card-content>
-      <mat-card-actions>
-        <!-- <button mat-icon-button>
+        <div>
+
+          <div fxLayout="column">
+
+            <!-- This is the head of switch that controls the visibility of the embedded project -->
+            <div class="columnItem" *ngIf="blog.containsEmbeddedProject">
+              <mat-slide-toggle bind-checked="showEmbeddedProjectWindow" (change)="toggleSimulator()">
+                {{blog.embeddedProjectName}}
+              </mat-slide-toggle>
+            </div>
+
+            <!-- In this div, actual content is written -->
+            <div class="columnItem" fxLayout="row">
+              <div class="blogContent">
+                {{blog.content}}
+              </div>
+            </div>
+
+            <!-- This is the embedded project window -->
+            <div fxLayout="column" cdkDrag [ngClass]="{'expandedEmbeddedProjectWindow': showEmbeddedProjectWindow == true, 'hiddenEmbeddedProjectWindow':showEmbeddedProjectWindow == false }">
+
+              <div cdkDragHandle fxFlex="35px;" class="embeddedProjectWindowTopBar" fxLayout="row" fxLayoutAlign="center center">
+                <div style="padding-left: 20px;" fxLayout="row" fxFlex>
+                  Search Simulator
+                </div>
+
+                <div fxFlex="10%" fxLayout="row" fxLayoutAlign="end center" style="padding: 5px;">
+                  <button mat-icon-button aria-label="Drag" matTooltip="The tool bar is drabbable" matTooltipPosition="above">
+                    <mat-icon>drag_indicator</mat-icon>
+                  </button>
+                  <button mat-icon-button aria-label="Open in new tab" matTooltip="Open in new tab" matTooltipPosition="above">
+                    <mat-icon>open_in_new</mat-icon>
+                  </button>
+                  <button mat-icon-button aria-label="Close" matTooltip="Close" matTooltipPosition="above">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </div>
+
+              </div>
+
+              <div fxFlex style="width: 100%; height: 100%;">
+                <iframe-embedder [url]="blog.embeddedProjectURL"></iframe-embedder>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-icon-button>
           <mat-icon style="color:grey;">share</mat-icon>
         </button>
         <button mat-icon-button>
           <mat-icon style="color: grey;">thumb_up</mat-icon>
         </button> -->
-      </mat-card-actions>
-    </mat-card>
-  </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
 
-  <!-- <div class="relatedBlogs">
+<!-- <div class="relatedBlogs">
     <mat-card class="blogCard">
       <mat-card-content>
           This will show related posts

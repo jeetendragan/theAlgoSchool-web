@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { BlogCardService } from '../blog-card/blog-card.service';
-import { BlogCardModule } from '../blog-card/blog-card.module';
+import { DetailedBlogService } from '../data-fetcher/detailed-blog.service';
+import { DetailedBlogModule } from '../data-fetcher/detailed-blog.module';
 
 @Component({
   selector: 'app-blog',
@@ -11,28 +11,35 @@ import { BlogCardModule } from '../blog-card/blog-card.module';
 export class BlogComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
-    private blogCardService : BlogCardService, 
+    private detailedBlogService : DetailedBlogService, 
     private router: Router) { 
 
     }
 
   blogId : String;
-  blog : BlogCardModule;
+  blog : DetailedBlogModule;
+  showEmbeddedProjectWindow : boolean;
 
   ngOnInit() {
     this.route.paramMap.subscribe(params=>{
       console.log(params);
       this.blogId = params.get("id");
-      this.blog = this.blogCardService.getBlogCard(this.blogId);
+      this.blog = this.detailedBlogService.getBlogCard(this.blogId);
       if(this.blog == null)
       {
         this.router.navigate(["/page-not-found/"]);
+      }else{
+        this.showEmbeddedProjectWindow = this.blog.containsEmbeddedProject;
       }
     });
   }
 
   navigateToHome(){
     this.router.navigate(['/home/']);
+  }
+
+  toggleSimulator(){
+    this.showEmbeddedProjectWindow = !this.showEmbeddedProjectWindow;
   }
 
 }
