@@ -19,7 +19,7 @@ export class DetailedBlogService {
               +"the algorithm makes at every step of the way!</li></ul>",
       "embeddedProjectName":"AI Search Simulator",
       "content":"This is the detailed content of the blog",
-      "containsEmbeddedProject":false,
+      "containsEmbeddedProject":true,
       "embeddedProjectURL":"http://localhost:4401"
     }
   ];
