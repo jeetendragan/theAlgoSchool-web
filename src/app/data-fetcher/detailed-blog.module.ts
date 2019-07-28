@@ -18,8 +18,7 @@ export class DetailedBlogModule {
   containsEmbeddedProject : boolean;
   embeddedProjectURL : String;
 
-  constructor(id: String, header: String, caption: String, summary: String, containsEmbeddedProject: boolean,
-    embeddedProjectURL: String){
+  constructor(id: String, header: String, caption: String, summary: String, containsEmbeddedProject: boolean, embeddedProjectURL: String){
     this.id = id;
     this.header = header;
     this.caption = caption;
