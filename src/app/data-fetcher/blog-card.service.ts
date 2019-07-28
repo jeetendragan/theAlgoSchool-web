@@ -8,15 +8,15 @@ export class BlogCardService {
 
   blogCards: BlogCardModule[] = [
     {
-      "id": "404fc0fe-c60b-4272-a754-a01f163ddf10",
-      "header": "AI Search",
-      "caption": "Search solutions intelligently!",
-      "summary": "<ul>"+
-              "<li>Introduces AI search</li>"+
-              "<li>Why computer scientists call it the \"AI\" search?</li>"+
-              "<li>Gives a brief description of various AI search algorithms.</li>"+
-              "<li>There is also a simulator that runs your chosen search algorithm at the speed you want, showing the decisions that "
-              +"the algorithm makes at every step of the way!</li></ul>"
+      id: '404fc0fe-c60b-4272-a754-a01f163ddf10',
+      header: 'AI Search',
+      caption: 'Search solutions intelligently!',
+      summary: '<ul>' +
+              '<li>Introduces AI search</li>' +
+              '<li>Why computer scientists call it the "AI" search?</li>' +
+              '<li>Gives a brief description of various AI search algorithms.</li>' +
+              '<li>There is also a simulator that runs your chosen search algorithm at the speed you want, showing the decisions that '
+              + 'the algorithm makes at every step of the way!</li></ul>'
     }
   ];
 
@@ -26,11 +26,13 @@ export class BlogCardService {
     return this.blogCards;
   }
 
-  public getBlogCard(blogId : String) : BlogCardModule{
+  public getBlogCard(blogId: string): BlogCardModule {
 
-    for(let i = 0; i < this.blogCards.length; i++){
-      if(this.blogCards[i].id == blogId)
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < this.blogCards.length; i++){
+      if (this.blogCards[i].id === blogId) {
         return this.blogCards[i];
+      }
     }
 
     return null;

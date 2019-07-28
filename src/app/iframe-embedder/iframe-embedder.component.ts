@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, PipeTransform, Pipe, } from '@angular/core';
-import { DomSanitizer } from "@angular/platform-browser";
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Pipe({ name: 'safe' })
 export class SafePipe implements PipeTransform {
@@ -18,7 +18,7 @@ export class IFrameEmbedderComponent implements OnInit {
 
   constructor() { }
 
-  url : String = "http://localhost:4401";
+  url = 'http://localhost:4401';
 
   ngOnInit() {
     // this.url = "https://www.youtube.com/embed/RfmTUV-zKgo";

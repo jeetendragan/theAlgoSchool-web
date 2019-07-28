@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -8,23 +8,23 @@ import { CommonModule } from '@angular/common';
   ]
 })
 
-export class DetailedBlogModule { 
-  id: String;
-  header: String;
-  caption: String;
-  summary: String;
-  content: String;
-  embeddedProjectName : String;
-  containsEmbeddedProject : boolean;
-  embeddedProjectURL : String;
+export class DetailedBlogModule {
+  id: string;
+  header: string;
+  caption: string;
+  summary: string;
+  content: string;
+  embeddedProjectName: string;
+  containsEmbeddedProject: boolean;
+  embeddedProjectURL: string;
 
-  constructor(id: String, header: String, caption: String, summary: String, containsEmbeddedProject: boolean, embeddedProjectURL: String){
-    this.id = id;
-    this.header = header;
-    this.caption = caption;
-    this.summary = summary;
-    this.containsEmbeddedProject = containsEmbeddedProject;
-    this.embeddedProjectURL = embeddedProjectURL;
-  }
+  // constructor(id: string, header: string, caption: string, summary: string, containsEmbeddedProject: boolean, embeddedProjectURL: string) {
+  //   this.id = id;
+  //   this.header = header;
+  //   this.caption = caption;
+  //   this.summary = summary;
+  //   this.containsEmbeddedProject = containsEmbeddedProject;
+  //   this.embeddedProjectURL = embeddedProjectURL;
+  // }
 
 }

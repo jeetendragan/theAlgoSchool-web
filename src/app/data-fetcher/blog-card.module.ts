@@ -8,17 +8,17 @@ import { CommonModule } from '@angular/common';
   ]
 })
 
-export class BlogCardModule { 
-  id: String;
-  header: String;
-  caption: String;
-  summary: String;
+export class BlogCardModule {
+  public id: string;
+  public header: string;
+  public caption: string;
+  public summary: string;
 
-  constructor(id: String, header: String, caption: String, summary: String){
-    this.id = id;
-    this.header = header;
-    this.caption = caption;
-    this.summary = summary;
-  }
+  // constructor(id: string, header: string, caption: string, summary: string){
+  //   this.id = id;
+  //   this.header = header;
+  //   this.caption = caption;
+  //   this.summary = summary;
+  // }
 
 }
