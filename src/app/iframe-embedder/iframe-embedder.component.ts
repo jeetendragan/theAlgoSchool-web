@@ -18,7 +18,7 @@ export class IFrameEmbedderComponent implements OnInit {
 
   constructor() { }
 
-  url = 'http://localhost:4201';
+  url = 'https://ai-search-simulator.herokuapp.com/';
 
   ngOnInit() {
 
