@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetailedBlogService } from '../data-fetcher/detailed-blog.service';
 import { DetailedBlogModule } from '../data-fetcher/detailed-blog.module';
@@ -6,7 +6,8 @@ import { DetailedBlogModule } from '../data-fetcher/detailed-blog.module';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  styleUrls: ['./blog.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BlogComponent implements OnInit {
 
@@ -29,8 +30,17 @@ export class BlogComponent implements OnInit {
         this.router.navigate(['/page-not-found/']);
       } else {
         this.showEmbeddedProjectWindow = this.blog.containsEmbeddedProject;
+        this.showEmbeddedProjectWindow = false;
       }
     });
+  }
+
+  closeEmbeddedWindow() {
+    this.showEmbeddedProjectWindow = false;
+  }
+
+  openEmbeddedProjectInNewTab() {
+    window.open('https://google.com', '_blank');
   }
 
   navigateToHome() {

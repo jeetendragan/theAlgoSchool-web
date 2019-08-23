@@ -1,40 +1,34 @@
-<div style="height: 100%;">
+<div class="container feedContainer" fxLayout="row" fxLayout.xs="column" fxFlex="100%" fxLayoutGap.xs="0" borderedDiv>
 
-  <div class="container feedContainer" 
-    fxLayout="row" fxLayout.xs="column" 
-    fxFlex="100%"
-    fxLayoutGap.xs="0" 
-    borderedDiv>
+  <div class="item item-4 feedMain" fxFlexOffset.xs="0">
 
-    <div class="item item-4 feedMain" fxFlexOffset.xs="0">
-
-      <mat-card *ngFor = "let blogCardData of blogCards" class="blogCard">
-        <mat-card-content>
-          <div fxLayout="column">
-            <div fxLayout="row" fxLayoutGap = "20px" fxLayout.lt-sm="column">
-              <div style="font-weight: 800">{{blogCardData.header}}</div>
-              <div style="color: gray;">{{blogCardData.caption}}</div>
-            </div>
-            <div style="margin: 10px;" [innerHTML]="blogCardData.summary"> 
-              <!-- {{blogCardData.summary}} -->
-            </div>
+    <mat-card *ngFor="let blogCardData of blogCards" class="blogCard">
+      <mat-card-content>
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutGap="20px" fxLayout.lt-sm="column">
+            <div style="font-weight: 800">{{blogCardData.header}}</div>
+            <div style="color: gray;">{{blogCardData.caption}}</div>
           </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-icon-button (click)="readBlog(blogCardData.id)">
-            <mat-icon>open_in_new</mat-icon>
-          </button>
-          <!-- <button mat-icon-button>
+          <div style="margin: 10px;" [innerHTML]="blogCardData.summary">
+            <!-- {{blogCardData.summary}} -->
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button (click)="readBlog(blogCardData.id)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+        <!-- <button mat-icon-button>
             <mat-icon style="color:grey;">share</mat-icon>
           </button>
           <button  mat-icon-button>
             <mat-icon style="color: grey;">thumb_up</mat-icon>
           </button> -->
-        </mat-card-actions>
-      </mat-card>
-    </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 
-    <!-- <div class="item item-5 feedSidebar" fxFlex>
+  <!-- <div class="item item-5 feedSidebar" fxFlex>
       <mat-card class="sidebarCard">
         <mat-card-content>
           This is the summary of the blog. Ipsom kibarubaihsioand. adihaidhashdiahsda d,
@@ -43,5 +37,4 @@
       </mat-card>
     </div> -->
 
-  </div>
 </div>

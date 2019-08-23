@@ -28,7 +28,7 @@
     overflow: auto;
     margin-top: 50px;
     margin-bottom: 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100%;
     /* border: 2px solid blue; */
 }

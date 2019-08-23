@@ -14,9 +14,7 @@ export class BlogCardService {
       summary: '<ul>' +
               '<li>Introduces AI search</li>' +
               '<li>Why computer scientists call it the "AI" search?</li>' +
-              '<li>Gives a brief description of various AI search algorithms.</li>' +
-              '<li>There is also a simulator that runs your chosen search algorithm at the speed you want, showing the decisions that '
-              + 'the algorithm makes at every step of the way!</li></ul>'
+              '<li>Run AI search algorithms on a simulator</li></ul>'
     }
   ];
 
