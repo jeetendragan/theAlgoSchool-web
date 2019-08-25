@@ -30,7 +30,6 @@ export class BlogComponent implements OnInit {
         this.router.navigate(['/page-not-found/']);
       } else {
         this.showEmbeddedProjectWindow = this.blog.containsEmbeddedProject;
-        this.showEmbeddedProjectWindow = false;
       }
     });
   }
@@ -40,7 +39,7 @@ export class BlogComponent implements OnInit {
   }
 
   openEmbeddedProjectInNewTab() {
-    window.open('https://google.com', '_blank');
+    window.open('https://ai-search-simulator.herokuapp.com/', '_blank');
   }
 
   navigateToHome() {

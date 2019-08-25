@@ -20,7 +20,8 @@ export class FeedComponent implements OnInit {
   }
 
   readBlog(blogId: string) {
-    this.router.navigate(['/blog/' + blogId]);
+    // this.router.navigate(['/blog/' + blogId]);
+    this.router.navigateByUrl('/blog/' + blogId);
   }
 
 }

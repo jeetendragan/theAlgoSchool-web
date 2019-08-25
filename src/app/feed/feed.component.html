@@ -15,9 +15,12 @@
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-icon-button (click)="readBlog(blogCardData.id)">
+        <a href="/blog/{{blogCardData.id}}">
+        <button mat-icon-button>
           <mat-icon>open_in_new</mat-icon>
         </button>
+        </a>
+        <!-- (click)="readBlog(blogCardData.id)" -->
         <!-- <button mat-icon-button>
             <mat-icon style="color:grey;">share</mat-icon>
           </button>
