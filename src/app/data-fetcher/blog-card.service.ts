@@ -9,6 +9,15 @@ export class BlogCardService {
   blogCards: BlogCardModule[] = [
     {
       id: '404fc0fe-c60b-4272-a754-a01f163ddf10',
+      header: 'Taylor Series',
+      caption: 'Get the intuition behind the Taylor series!',
+      summary: '<ul>' +
+              '<li>What is a Taylor Series?</li>' +
+              '<li>How is a Taylor series used?</li>' +
+              '<li>How is the Taylor series formula derived?</li><ul>'
+    },
+    {
+      id: 'b49b4331-3b2d-485e-b8ae-f19c93e448f6',
       header: 'AI Search',
       caption: 'Search solutions intelligently!',
       summary: '<ul>' +
