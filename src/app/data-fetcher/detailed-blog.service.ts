@@ -51,6 +51,51 @@ export class DetailedBlogService {
           'Checkout the MATLAB scripts <a href="https://github.com/jeetendragan/taylor-series-matlab" target="_blank">here</a>',
       containsEmbeddedProject: false,
       embeddedProjectURL: 'false'
+    },
+    {
+      id: 'e5881692-1f14-11eb-adc1-0242ac120002',
+      header: 'Paper review - Ocean-Vista',
+      caption: 'Gossip-Based Visibility Control for Speedy Geo-Distributed Transactions',
+      summary: '<ul>' +
+      '<li>Paper by researchers at Alibaba and University of Waterloo</li>' +
+      '<li>How does ocean-vista solve the problem of geo-distributed transactions?</li>' +
+      '<li>How does it compare to one other state-of-the-art transaction processing system(TAPIER)?</li>' +
+      '</ul>',
+      embeddedProjectName: '',
+      content:'<br><p>I presented this paper in one of my classes (CSE 708-Distributed Systems Seminar). I am really liking this course since I am able to understand how the basics of Distributed Systems(Paxos, Consensus, Replication, Consistency, Linearizability, etc.) are applied to build real-world distributed systems by reading research papers.'+
+      '<p>If you don\'t want to read a lot, <a href="https://youtu.be/q0ikitzgkSI" target="_blank">here is a video of the presentation</a>. Also, find the orignal paper written by Hua Fan (Alibaba), and Wojciech Golab (University of Waterloo) <a href="http://www.vldb.org/pvldb/vol12/p1471-fan.pdf" target="_blank">here</a>. The paper was published in VLDB.</p>'+
+      '<h2>Introduction</h2>' +
+      '<p>Transactions are hard, distributed transactions are even harder, and transactions over a WAN are the hardest of them all. Ocean Vista is a gossip based protocol that guarantees strict serializability for geo-distributed transactions. Ocean-Vista achieves two goals of distributed transaction processing- concurrency and replication with an efficient gossip based distributed protocol. It performs better than a state-of-the-art geo-distributed transaction protocol, TAPIER in some aspects(throughput). TAPIER beats OV in terms of latency, but OV’s best case matches with TAPIER’s latency.</p>'+
+      '<h2>How does Ocean-Vista work?</h2>'+
+      'OV combines concurrency control, transaction commitment, and replication inside a single protocol. It maintains the visibility of transactions (permission to execute) using watermarks which are gossiped across the data-centers. Each transaction is assigned a version number (globally unique, depending on the timestamp, server id, and an increasing counter). These version numbers are monotonically increasing. It is also assumed that the servers are synchronized by NTP(Network Time Protocol). Furthermore the paper introduces two types of watermarks VWatermark(Visibility watermark), and RWatermark(Replica Watermark). Anything below the RWatermark is considered to be fully-replicated to all replicas. The RWatermark helps OV achieve RO(Read Once), i.e. we need to read from any one replica if the version being read is less than RWatermark. Anything below the VWatermark tells us that a transaction can be made visible(i.e. All the transactions below VWatermark have been written to the replicas). This helps increase efficiency by batch acknowledgement since all versions below VWatermark become visible for all keys.'+
+      '<br><p> <h3><b>Asynchronous Concurrency Control protocol</b></h3></p>'+
+      '<p>The concurrency control and transaction commitment are taken care of by the Asynchronous Concurrency Control protocol. In that, the transaction placeholders are distributed at all replicas(involved in the transaction) in the write-only phase(S-Phase), and then once the transaction id (Vs) is below the VWatermark, they can be executed locally by the shards independently. Before execution all the versions are ordered, then everything in the transaction’s read set is read(read-only phase). After reading, the output is computed and asynchronously written to all the replicas(write-async).</p>'+
+      '<p>What makes OV faster than other concurrency control protocols is that most of the phases described above can be executed in parallel and without conflicts. Only the read-only, and async-write cannot be executed in parallel, but such transactions have a small-contention footprint.</p>'+
+      '<p>If all the replicas required are available in the same data center, then OV can achieve best case latency of 1 WAN RTT calculated as follows - </p>'+
+      '<ol>'+
+      '<li>S-Phase (1 WAN RTT)</li>'+
+      '<li>Local reads within DC(Negligible)</li>' +
+      '<li>Async Writes (not counted)</li>' +
+      '</ol>'+
+      '<p><h3><b>Gossips</b></h3></p>'+
+      'The global watermarks are maintained using message exchanges between - ' +
+      '<ol>' +
+      '<li><b>the gossipers and the servers within the datacenter </b> to compute the watermark across servers within a data center</li>'+
+      '<li><b>Gossiper-gossiper messages across different data centers</b> to combine knowledge about the watermarks across all the data center</li>'+
+      '</ol>' + 
+      '<p>The TidManager maintains the server level watermark. The gossipers keep pooling these servers for their server level watermarks. The data center level watermarks are computed by taking the minimum of all the server level watermarks. The gossiper also publishes the global watermark to each server.</p>'+
+      '<p>Gossipers exchange their own data center level watermarks with other gossipers to get a global knowledge.</p>' +
+      '<p><h3><b>Replication protocol</b></h3></p>'+
+      '<p>Writes(S-Phase) succeeds in 1 WAN RTT as long as a super-quorum of replicas is available or in two RTTs once a majority quorum is available whichever comes first. This gives us a WriteQuorum complexity. For read operations, if the version is below the RWatermark, it can be read from the closest replica. Which gives us a ReadOne complexity. If the version to be read is between Rwatermark, and VWatermark, the reader needs to read from a quorum of replicas. This gives us WQRO (Write-Quorum Read-Once) complexity.</p>'+
+      '<p><h2>Fault tolerance</h2></p>' +
+      '<p>OV handles Coordinator Failure by using a backup to which it writes everything(functor, or computed value) before writing it to a replica. This allows the backup to re-execute the functors to attain the same state as the coordinator. If the backup fails, the progress stalls.</p>'+
+      '<p>In case of replica node failures a new leader within a shard is elected that splits the version assignment between 2 sets. First- all the live members of the shard(which handle all the keys up until the max version value from all the live members), Second- All the live members + the new member(which handle all the versions above the max version value of the live members of shard). The merger happens when the new node has all the old versions.</p>'+
+      '<p>Since there are multiple Gossipers which perform the same function, other gossipers can take over. If all the gossipers fail, then the DC fails, which requires a membership change to remove the failed data center.</p>'+
+      '<p><h2>Performance</h2></p>'+
+      'OV-DB has primarily been compared to TAPIR with low contention to high contention workloads. In general OV has a greater throughput than TAPIR, but TAPIR has a lower latency. For 0 contention workloads, OV performs almost 14 times better than TAPIER, and for contention heavy workloads, OV is better by 64 times. In general TAPIER is highly sensitive to contention while OV-DB is not. The greater latency due to gossips is the only metric in which OV falls behind TAPIER.'
+      ,
+      containsEmbeddedProject: false,
+      embeddedProjectURL: 'false'
     }
   ];
 
