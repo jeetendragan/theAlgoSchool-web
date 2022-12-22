@@ -39,7 +39,7 @@ export class BlogComponent implements OnInit {
   }
 
   openEmbeddedProjectInNewTab() {
-    window.open('https://ai-search-simulator.herokuapp.com/', '_blank');
+    window.open('https://jeetendragan.github.io/AISearchSimulator/', '_blank');
   }
 
   navigateToHome() {
